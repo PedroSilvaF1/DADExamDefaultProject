@@ -7,8 +7,8 @@ import router from './router'
 
 const apiDomain = import.meta.env.VITE_API_DOMAIN || 'localhost:8000'
 const wsConnection = import.meta.env.VITE_WS_CONNECTION || 'http://localhost:3000'
-const studentName = import.meta.env.VITE_STUDENT_NAME || 'Unknown Student'
-const studentNumber = import.meta.env.VITE_STUDENT_NUMBER || 'XXXXXXX'
+const studentName = import.meta.env.VITE_STUDENT_NAME || 'Pedro Silva'
+const studentNumber = import.meta.env.VITE_STUDENT_NUMBER || '2230997'
 
 
 const app = createApp(App)

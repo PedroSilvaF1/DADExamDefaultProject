@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NoteController;
 use App\Models\User;
 
 
@@ -21,5 +22,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/users/me', function (Request $request) {
         return $request->user();
     });
-    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::get('/notes', [NoteController::class, 'index']);
+    Route::post('/notes', [NoteController::class, 'store']);
 });
