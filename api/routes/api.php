@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NoteController;
 use App\Models\User;
+use App\Http\Controllers\ProductController;
 
 
 Route::get('/health', function () {
@@ -26,4 +27,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/notes', [NoteController::class, 'index']);
     Route::post('/notes', [NoteController::class, 'store']);
+
+    Route::get('/products', [ProductController::class, 'index']);
 });

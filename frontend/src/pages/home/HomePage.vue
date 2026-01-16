@@ -33,5 +33,14 @@ const studentNumber = inject('studentNumber')
         Gerir as Minhas Notas
       </RouterLink>
     </div>
+
+    <div class="mt-8 flex justify-center">
+      <RouterLink
+          to="/store"
+          class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300 shadow-md"
+      >
+        Visitar a Loja Online
+      </RouterLink>
+    </div>
   </div>
 </template>
