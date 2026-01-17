@@ -16,14 +16,13 @@ const formData = ref({
 })
 
 const handleSubmit = async () => {
-    toast.promise(authStore.login(formData.value), {
-        loading: 'Calling API',
-        success: (data) => {
-            return `Login Sucessfull - ${data?.name}`
-        },
-        error: (data) => `[API] Login error: ${data?.response?.data?.message}`,
-    })
-    router.push('/')
+    try {
+        await authStore.login(formData.value)
+        toast.success(`Login Sucessfull - ${authStore.currentUserName}`)
+        router.push('/')
+    } catch (error) {
+        toast.error(`[API] Login error: ${error?.response?.data?.message || error.message}`)
+    }
 }
 </script>
 
