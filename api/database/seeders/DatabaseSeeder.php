@@ -23,6 +23,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
+        ]);
+
         Product::create(['name' => 'Portátil Gaming', 'price' => 1200.50, 'description' => 'Super rápido']);
         Product::create(['name' => 'Rato Wireless', 'price' => 25.00, 'description' => 'Sem fios']);
         Product::create(['name' => 'Monitor 24"', 'price' => 150.00, 'description' => 'Full HD']);

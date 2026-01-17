@@ -39,7 +39,11 @@
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
-            
+
+            <Button variant="ghost" as-child>
+                <RouterLink to="/products">Products List</RouterLink>
+            </Button>
+
             <DropdownMenu>
                 <DropdownMenuTrigger as-child>
                     <Button variant="ghost">Menu</Button>
@@ -68,7 +72,7 @@
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                         <DropdownMenuItem>
-                            <RouterLink to="/" class="w-full">Profile</RouterLink>
+                            <RouterLink to="/profile" class="w-full">Profile</RouterLink>
                         </DropdownMenuItem>
                         <hr>
                         <DropdownMenuItem>

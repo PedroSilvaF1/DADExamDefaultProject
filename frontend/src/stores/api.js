@@ -37,6 +37,10 @@ export const useAPIStore = defineStore('api', () => {
         return axios.get(`${API_BASE_URL}/users/me`)
     }
 
+    const changePassword = (passwordData) => {
+        return axios.patch(`${API_BASE_URL}/users/me/password`, passwordData)
+    }
+
     // --- Métodos para Notas ---
     const getNotes = () => {
         return axios.get(`${API_BASE_URL}/notes`)
@@ -48,23 +52,36 @@ export const useAPIStore = defineStore('api', () => {
 
     // metodos para produtos
 
-    const getProducts = () => {
-        return axios.get(`${API_BASE_URL}/products`)
+    const getProducts = (filter = null) => {
+        if (filter == null){
+            return axios.get(`${API_BASE_URL}/products`)
+        }
+        return axios.get(`${API_BASE_URL}/products/?filter=${filter}`)
     }
 
     const addProduct = (productData) => {
         return axios.post(`${API_BASE_URL}/products`, productData)
     }
 
+    const updateNameProducts = (id, name) => {
+        return axios.patch(`${API_BASE_URL}/products/${id}`, {"name":name})
+    }
+
+    const createPurchase = (cartData) => {
+        return axios.post(`${API_BASE_URL}/purchases`, cartData)
+    }
 
     return {
         token,
         postLogin,
         postLogout,
         getAuthUser,
+        changePassword,
         getNotes,
         createNote,
         getProducts,
         addProduct,
+        updateNameProducts,
+        createPurchase
     }
 })

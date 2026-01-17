@@ -31,6 +31,10 @@ export const useAuthStore = defineStore('auth', () => {
     currentUser.value = undefined
   }
 
+  const changePassword = async (passwords) => {
+    await apiStore.changePassword(passwords)
+  }
+
   return {
     currentUser,
     isLoggedIn,
@@ -38,5 +42,6 @@ export const useAuthStore = defineStore('auth', () => {
     currentUserName,
     login,
     logout,
+    changePassword,
   }
 })
